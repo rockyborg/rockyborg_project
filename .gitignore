@@ -1,0 +1,34 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Editors / OS
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# ROS build products (if ROS is selected)
+build/
+install/
+log/
+
+# Personal notes / agent memory (defense in depth)
+Brain/
+brain/
+AGENTS.md
+**/AGENTS.md
+*private-notes*
