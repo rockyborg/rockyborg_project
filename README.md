@@ -19,7 +19,6 @@ Collaborative repository for the RockyBorg Raspberry Pi robotics project.
 
 ## Collaboration
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Keep this GitHub repository **private** and invite only team members. Do not add private Brain files, passwords, credentials, personal notes, or Git history from another repository.
 
 ## Next decisions
 
