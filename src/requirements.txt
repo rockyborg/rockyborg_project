@@ -1,0 +1,6 @@
+# Install in venv with --system-site-packages to reuse apt Picamera2, numpy, and OpenCV.
+adafruit-blinka>=8,<10
+adafruit-circuitpython-bme280>=2,<4
+adafruit-circuitpython-vl53l1x>=2,<5
+gpiozero>=2,<3
+paho-mqtt>=2,<3
