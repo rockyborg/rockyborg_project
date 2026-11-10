@@ -25,8 +25,8 @@
         <mxCell id="broker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4CC;strokeColor=#B7791F;strokeWidth=2;fontSize=13;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;dashed=1;" value="&lt;b&gt;MQTT broker&lt;/b&gt;&lt;br&gt;&lt;br&gt;Additional service&lt;br&gt;Candidate transport&lt;br&gt;&lt;br&gt;Broker / host: TBD" vertex="1">
           <mxGeometry height="130" width="130" x="866" y="370" as="geometry" />
         </mxCell>
-        <mxCell id="nodered" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7F0;strokeColor=#E76F00;strokeWidth=2;fontSize=18;fontStyle=1;fontColor=#183153;verticalAlign=top;align=left;spacingTop=12;spacingLeft=14;" value="&lt;b&gt;Node-RED flow&lt;/b&gt;&lt;br&gt;&lt;br&gt;Receives and prepares telemetry" vertex="1">
-          <mxGeometry height="437" width="253.5" x="1014" y="163" as="geometry" />
+        <mxCell id="nodered" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7F0;strokeColor=#E76F00;strokeWidth=2;fontSize=18;fontStyle=1;fontColor=#183153;verticalAlign=top;align=left;spacingTop=12;spacingLeft=14;" value="&lt;b&gt;Node-RED flow&lt;/b&gt;&lt;br&gt;&lt;br&gt;Receives, prepares, and displays telemetry" vertex="1">
+          <mxGeometry height="437" width="455" x="1014" y="163" as="geometry" />
         </mxCell>
         <mxCell id="nr_mqtt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE8D6;strokeColor=#E76F00;strokeWidth=2;fontSize=12;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;MQTT In&lt;/b&gt;&lt;br&gt;Subscribe to topic" vertex="1">
           <mxGeometry height="48" width="214" x="1033" y="270" as="geometry" />
@@ -40,13 +40,13 @@
         <mxCell id="nr_change" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE8D6;strokeColor=#E76F00;strokeWidth=2;fontSize=12;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;Switch / Change&lt;/b&gt;&lt;br&gt;Validate, route, shape fields" vertex="1">
           <mxGeometry height="58" width="214" x="1033" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="nr_out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE8D6;strokeColor=#E76F00;strokeWidth=2;fontSize=12;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;dashed=1;" value="&lt;b&gt;InfluxDB Out&lt;/b&gt;&lt;br&gt;Install compatible palette package" vertex="1">
-          <mxGeometry height="58" width="214" x="1033" y="525" as="geometry" />
+        <mxCell id="nr_dashboard" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0E7FF;strokeColor=#7E57C2;strokeWidth=2;fontSize=12;fontColor=#183153;align=center;verticalAlign=middle;spacing=8;dashed=1;" value="&lt;b&gt;FlowFuse Dashboard&lt;/b&gt;&lt;br&gt;Node-RED Dashboard 2.0&lt;br&gt;Live telemetry UI&lt;br&gt;@flowfuse/node-red-dashboard" vertex="1">
+          <mxGeometry height="70" width="214" x="1033" y="525" as="geometry" />
         </mxCell>
-        <mxCell id="influx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F5E9;strokeColor=#2E8B57;strokeWidth=2;fontSize=13;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;dashed=1;" value="&lt;b&gt;InfluxDB&lt;/b&gt;&lt;br&gt;&lt;br&gt;Stores time-series points&lt;br&gt;Timestamp + run ID + values&lt;br&gt;&lt;br&gt;Version / bucket: TBD" vertex="1">
-          <mxGeometry height="155" width="170" x="1292" y="350" as="geometry" />
+        <mxCell id="nr_out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE8D6;strokeColor=#E76F00;strokeWidth=2;fontSize=12;fontColor=#183153;align=center;verticalAlign=middle;spacing=8;dashed=1;" value="&lt;b&gt;InfluxDB Out (optional)&lt;/b&gt;&lt;br&gt;Install compatible palette package" vertex="1">
+          <mxGeometry height="70" width="200" x="1255" y="525" as="geometry" />
         </mxCell>
-        <mxCell id="grafana" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0E7FF;strokeColor=#7E57C2;strokeWidth=2;fontSize=13;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;dashed=1;" value="&lt;b&gt;Grafana&lt;/b&gt;&lt;br&gt;&lt;br&gt;InfluxDB data source&lt;br&gt;Dashboard panels plot values&lt;br&gt;over time&lt;br&gt;&lt;br&gt;Host: TBD" vertex="1">
+        <mxCell id="influx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F5E9;strokeColor=#2E8B57;strokeWidth=2;fontSize=13;fontColor=#183153;align=center;verticalAlign=middle;spacing=10;dashed=1;" value="&lt;b&gt;InfluxDB (optional)&lt;/b&gt;&lt;br&gt;&lt;br&gt;Time-series storage&lt;br&gt;Timestamp + run ID + values&lt;br&gt;&lt;br&gt;Version / bucket: TBD" vertex="1">
           <mxGeometry height="155" width="170" x="1490" y="350" as="geometry" />
         </mxCell>
         <mxCell id="hw_to_py" edge="1" parent="1" source="hardware" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#344054;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;" target="python_src" value="sensor / camera inputs">
@@ -84,20 +84,16 @@
         <mxCell id="nr_flow_3" edge="1" parent="1" source="nr_debug" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#344054;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;" target="nr_change" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nr_flow_4" edge="1" parent="1" source="nr_change" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#344054;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;" target="nr_out" value="">
+        <mxCell id="nr_flow_4" edge="1" parent="1" source="nr_change" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7E57C2;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" target="nr_dashboard" value="live display">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nr_to_influx_out" edge="1" parent="1" source="nr_change" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E76F00;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" target="nr_out" value="optional history">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nr_to_db" edge="1" parent="1" source="nr_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E8B57;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;dashed=1;dashPattern=6 4;" target="influx" value="write timestamped points">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1278" y="555" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="db_to_graf" edge="1" parent="1" source="grafana" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7E57C2;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;startArrow=block;startFill=1;" target="influx" value="query / results">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1475" y="430" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -137,10 +133,10 @@
         <mxCell id="leg_inf_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#344054;" value="InfluxDB time-series storage" vertex="1">
           <mxGeometry height="28" width="340" x="82" y="783" as="geometry" />
         </mxCell>
-        <mxCell id="leg_gra" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0E7FF;strokeColor=#7E57C2;strokeWidth=2;" value="" vertex="1">
+        <mxCell id="leg_dashboard" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0E7FF;strokeColor=#7E57C2;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="24" width="32" x="430" y="785" as="geometry" />
         </mxCell>
-        <mxCell id="leg_gra_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#344054;" value="Grafana dashboard" vertex="1">
+        <mxCell id="leg_dashboard_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#344054;" value="FlowFuse Dashboard (Node-RED Dashboard 2.0)" vertex="1">
           <mxGeometry height="28" width="340" x="472" y="783" as="geometry" />
         </mxCell>
         <mxCell id="leg_tbd" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F4F6;strokeColor=#667085;strokeWidth=2;dashed=1;" value="" vertex="1">
@@ -155,7 +151,7 @@
         <mxCell id="line_dash" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#344054;" value="Dashed arrows: selected telemetry sent toward storage" vertex="1">
           <mxGeometry height="28" width="500" x="590" y="834" as="geometry" />
         </mxCell>
-        <mxCell id="line_query" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#344054;" value="Purple double arrow: Grafana queries InfluxDB and displays results" vertex="1">
+        <mxCell id="line_dashboard" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#344054;" value="Purple arrow: Node-RED sends live telemetry to FlowFuse Dashboard" vertex="1">
           <mxGeometry height="28" width="540" x="1100" y="834" as="geometry" />
         </mxCell>
         <mxCell id="legend_solid" edge="1" parent="1" source="hw_to_py" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#344054;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#344054;labelBackgroundColor=#ffffff;" target="py_to_hw" value="">
@@ -173,16 +169,16 @@
             <mxPoint x="680" y="875" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="legend_query_line" edge="1" parent="1" style="edgeStyle=none;html=1;strokeColor=#7E57C2;strokeWidth=2;endArrow=block;endFill=1;startArrow=block;startFill=1;" value="">
+        <mxCell id="legend_dashboard_line" edge="1" parent="1" style="edgeStyle=none;html=1;strokeColor=#7E57C2;strokeWidth=2;endArrow=block;endFill=1;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1100" y="875" as="sourcePoint" />
             <mxPoint x="1190" y="875" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="note_how" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#94A3B8;strokeWidth=2;fontSize=13;fontColor=#183153;align=left;verticalAlign=middle;spacing=10;" value="&lt;b&gt;HOW TO READ&lt;/b&gt;&lt;br&gt;1. Camera and sensor readings enter Python modules.&lt;br&gt;2. Navigation code chooses movement; hardware/motors.py sends drive and tilt-steering commands through the PiBorg controller.&lt;br&gt;3. Selected numeric values branch to MQTT, then Node-RED prepares them for InfluxDB." vertex="1">
+        <mxCell id="note_how" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#94A3B8;strokeWidth=2;fontSize=13;fontColor=#183153;align=left;verticalAlign=middle;spacing=10;" value="&lt;b&gt;HOW TO READ&lt;/b&gt;&lt;br&gt;1. Camera and sensor readings enter Python modules.&lt;br&gt;2. Navigation code chooses movement; hardware/motors.py sends drive and tilt-steering commands through the PiBorg controller.&lt;br&gt;3. Selected numeric values branch to MQTT and Node-RED, which sends live values to FlowFuse Dashboard and can optionally store time-series data in InfluxDB." vertex="1">
           <mxGeometry height="205" width="775" x="40" y="920" as="geometry" />
         </mxCell>
-        <mxCell id="note_status" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#C89B27;strokeWidth=2;fontSize=13;fontColor=#183153;align=left;verticalAlign=middle;spacing=10;" value="&lt;b&gt;REFERENCE + STATUS&lt;/b&gt;&lt;br&gt;PiBorg reference describes two rear geared motors, a front wheel, and servo-tilt steering; the team order lists the Pi, camera, and sensors. Confirm exact kit revision and installed parts.&lt;br&gt;MQTT, service locations, database version, sensor interfaces, and motor-control API are open. Camera frames stay out of the telemetry database. This drawing is proposed, not implemented." vertex="1">
+        <mxCell id="note_status" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#C89B27;strokeWidth=2;fontSize=13;fontColor=#183153;align=left;verticalAlign=middle;spacing=10;" value="&lt;b&gt;REFERENCE + STATUS&lt;/b&gt;&lt;br&gt;PiBorg reference describes two rear geared motors, a front wheel, and servo-tilt steering; the team order lists the Pi, camera, and sensors. Confirm exact kit revision and installed parts.&lt;br&gt;MQTT, service locations, database version, sensor interfaces, and motor-control API are open. FlowFuse Dashboard is a candidate palette package; InfluxDB storage is optional. Camera frames stay out of the telemetry database. This drawing is proposed, not implemented." vertex="1">
           <mxGeometry height="205" width="810" x="840" y="920" as="geometry" />
         </mxCell>
       </root>
